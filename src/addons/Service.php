@@ -28,7 +28,7 @@ class Service
      */
     public static function download($name, $extend = [])
     {
-        $addonTmpDir = RUNTIME_PATH . 'addons' . DIRECTORY_SEPARATOR;
+        $addonTmpDir = Env::get('runtime_path') . 'addons' . DIRECTORY_SEPARATOR;
         if (!is_dir($addonTmpDir)) {
             @mkdir($addonTmpDir, 0755, true);
         }
@@ -77,7 +77,7 @@ class Service
      */
     public static function unzip($name)
     {
-        $file = RUNTIME_PATH . 'addons' . DIRECTORY_SEPARATOR . $name . '.zip';
+        $file = Env::get('runtime_path') . 'addons' . DIRECTORY_SEPARATOR . $name . '.zip';
         $dir = ADDON_PATH . $name . DIRECTORY_SEPARATOR;
         if (class_exists('ZipArchive')) {
             $zip = new ZipArchive;
@@ -102,7 +102,7 @@ class Service
      */
     public static function backup($name)
     {
-        $file = RUNTIME_PATH . 'addons' . DIRECTORY_SEPARATOR . $name . '-backup-' . date("YmdHis") . '.zip';
+        $file = Env::get('runtime_path') . 'addons' . DIRECTORY_SEPARATOR . $name . '-backup-' . date("YmdHis") . '.zip';
         $dir = ADDON_PATH . $name . DIRECTORY_SEPARATOR;
         if (class_exists('ZipArchive')) {
             $zip = new ZipArchive;
