@@ -1,6 +1,6 @@
 {
     "name": "m1509001/fastadmin-addons",
-    "description": "addons package for fastadmin",
+    "description": "addons package for fastadmin 升级到tp5.1后该包可用",
     "homepage": "https://github.com/m1509001/fastadmin-addons",
     "license": "Apache-2.0",
     "minimum-stability": "dev",
